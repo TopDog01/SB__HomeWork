@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-    setlocale(LC_ALL, "Russian");
+    
 
     const int TICKET_PRICE = 20; // Цена билета
     const int STOPS_COUNT = 4;   // Количество остановок
