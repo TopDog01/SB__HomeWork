@@ -7,44 +7,44 @@ int main() {
 
     setlocale(LC_ALL, "Russian");
 
-    const int TICKET_PRICE = 20; // Цена билета
-    const int STOPS_COUNT = 4;   // Количество остановок
+    const int TICKET_PRICE = 20; 
+    const int STOPS_COUNT = 4;   
     string stops[STOPS_COUNT] = {
-        "Улица программистов",
-        "Проспект алгоритмов",
-        "Площадь разработчиков",
-        "Набережная дебаггинга"
+        "Street of programmers",
+        "Prospectus of Algorithms",
+        "Developers Square",
+        "Debugging Embankment"
     };
 
-    int totalPassengers = 0;       // Общее количество пассажиров
-    int totalIncome = 0;           // Общий доход
+    int totalPassengers = 0;       
+    int totalIncome = 0;           
     int passengersExited, passengersEntered;
 
     for (int i = 0; i < STOPS_COUNT; i++) {
-        cout << "Прибываем на остановку \"" << stops[i] << "\". В салоне пассажиров: " << totalPassengers << endl;
+        cout << "We arrive at the stop \"" << stops[i] << "\". In the passenger cabin: " << totalPassengers << endl;
 
-        cout << "Сколько пассажиров вышло на остановке? ";
+        cout << "How many passengers got off at the stop?? ";
         cin >> passengersExited;
 
-        // Убедимся, что количество вышедших не превышает текущее количество пассажиров
+        
         if (passengersExited > totalPassengers) {
-            cout << "Недостаточно пассажиров в салоне!" << endl;
-            return 1; // Завершаем программу с ошибкой
+            cout << "Not enough passengers in the cabin!" << endl;
+            return 1; 
         }
 
         totalPassengers -= passengersExited;
 
-        cout << "Сколько пассажиров зашло на остановке? ";
+        cout << "How many passengers got on at the stop? ";
         cin >> passengersEntered;
 
         totalPassengers += passengersEntered;
         totalIncome += passengersEntered * TICKET_PRICE;
 
-        cout << "Отправляемся с остановки \"" << stops[i] << "\". В салоне пассажиров: " << totalPassengers << endl;
-        cout << "-----------Едем---------" << endl;
+        cout << "We leave from the bus stop \"" << stops[i] << "\". In the passenger cabin: " << totalPassengers << endl;
+        cout << "-----------Let's go---------" << endl;
     }
 
-    // Расчет расходов
+    
     int driverSalary = totalIncome / 4;
     int fuelExpenses = totalIncome / 5;
     int taxExpenses = totalIncome / 5;
@@ -52,13 +52,13 @@ int main() {
     int totalExpenses = driverSalary + fuelExpenses + taxExpenses + repairExpenses;
     int profit = totalIncome - totalExpenses;
 
-    // Вывод информации
-    cout << "Всего заработали: " << totalIncome << " руб." << endl;
-    cout << "Зарплата водителя: " << driverSalary << " руб." << endl;
-    cout << "Расходы на топливо: " << fuelExpenses << " руб." << endl;
-    cout << "Налоги: " << taxExpenses << " руб." << endl;
-    cout << "Расходы на ремонт машины: " << repairExpenses << " руб." << endl;
-    cout << "Итого доход: " << profit << " руб." << endl;
+    
+    cout << "Total earned: " << totalIncome << " RUB." << endl;
+    cout << "Driver's salary: " << driverSalary << " RUB." << endl;
+    cout << "Fuel costs: " << fuelExpenses << " RUB." << endl;
+    cout << "Taxes: " << taxExpenses << " RUB." << endl;
+    cout << "Car repair costs: " << repairExpenses << " RUB." << endl;
+    cout << "Total income: " << profit << " RUB." << endl;
 
     return 0;
 }
